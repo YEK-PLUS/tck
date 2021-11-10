@@ -1,7 +1,7 @@
 import { CheckRequestBodyBuilder } from '../middlewares'
 import Methods from '.'
 import convert from 'xml-js'
-const Base = 'https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL'
+import { Base } from '../config'
 const check = async function (
   this: Methods,
   props: {

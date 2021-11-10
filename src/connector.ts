@@ -1,5 +1,5 @@
 import Fetch, { Response } from 'node-fetch'
-const Action = 'http://tckimlik.nvi.gov.tr/WS/TCKimlikNoDogrula'
+import { Action } from './config'
 class Connector {
   constructor(public fetcher: typeof Fetch = Fetch) {}
   fetch: (url: string, props: { body: string }) => Promise<Response> = (
