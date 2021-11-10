@@ -1,8 +1,9 @@
+import convert from 'xml-js'
 import { CheckRequestBodyBuilder } from '../middlewares'
 import Methods from '.'
-import convert from 'xml-js'
 import { Base } from '../config'
-const check = async function (
+
+const check = async function Check(
   this: Methods,
   props: {
     tckn: number

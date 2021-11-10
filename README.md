@@ -13,7 +13,7 @@ yarn add @yek-plus/tck
 ```js
 const Tck = require("@yek-plus/tck");
 const tck = new Tck()
-tck.methods.check({
+tck.methods.Check({
     tckn: Turkish Identification Number,
     ad: Fist Name,
     soyad: Last Name,
@@ -68,7 +68,7 @@ tck.methods.check({
 ```js
 const Tck = require("@yek-plus/tck");
 const tck = new Tck()
-tck.methods.check({
+tck.methods.Check({
     tckn: Turkish Identification Number,
     ad: Fist Name,
     soyad: Last Name,

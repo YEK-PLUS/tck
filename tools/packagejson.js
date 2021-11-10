@@ -7,7 +7,7 @@ const file = require(fileName)
 
 const args = process.argv.slice(2)
 
-for (let i = 0, l = args.length; i < l; i++) {
+for (let i = 0, l = args.length; i < l; i += 1) {
   if (i % 2 === 0) {
     file[args[i]] = args[i + 1]
   }
@@ -18,8 +18,8 @@ fs.writeFile(
   JSON.stringify(file, null, 2),
   (err) => {
     if (err) {
-      return console.log(err)
+      return console.log(err) // eslint-disable-line no-console
     }
-    console.log('Writing to ' + fileName)
+    return console.log(`Writing to ${fileName}`) // eslint-disable-line no-console
   }
 )
