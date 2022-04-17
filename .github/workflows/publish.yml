@@ -43,10 +43,17 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Setup .npmrc file to publish to NPM
+        uses: actions/setup-node@v1
         with:
-          node-version: 10
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+          node-version: '14.x'
+          scope: '@yek-plus'
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
