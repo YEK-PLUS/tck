@@ -23,7 +23,7 @@
     "lint": "eslint . --fix"
   },
   "publishConfig": {
-    "access": "private"
+    "access": "public"
   },
   "files": [
     "dist"
