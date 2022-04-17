@@ -1,6 +1,6 @@
 {
   "name": "@yek-plus/tck",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "description": "TCK connector",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -46,7 +46,6 @@
     "url": "https://github.com/YEK-PLUS/tck/issues"
   },
   "dependencies": {
-    "@types/node-fetch": "2.5.12",
     "node-fetch": "2.6.7",
     "xml-js": "^1.6.11"
   },
@@ -54,6 +53,7 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@types/jest": "^27.0.1",
+    "@types/node-fetch": "^2.6.1",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
     "eslint": "^8.2.0",
