@@ -12,34 +12,27 @@ const check = async function Check(
     dogumYili: number
   }
 ) {
-  try {
-    const response = await this.connector
-      .fetch(Base, {
-        body: CheckRequestBodyBuilder({
-          ad: props.ad,
-          soyad: props.soyad,
-          tckn: props.tckn,
-          dogumYili: props.dogumYili,
-        }),
-      })
-      .then((res) => res.text())
-      .then((res) => convert.xml2json(res))
-      .then((res) => JSON.parse(res))
-      .then(
-        (res) => res.elements[0].elements[0].elements[0].elements[0].elements[0]
-      )
-      .then((res) => res.text)
-    return {
-      status: true,
-      data: {
-        isValid: response === 'true',
-      },
-    }
-  } catch (error) {
-    return {
-      status: false,
-      error,
-    }
+  const response = await this.connector
+    .fetch(Base, {
+      body: CheckRequestBodyBuilder({
+        ad: props.ad,
+        soyad: props.soyad,
+        tckn: props.tckn,
+        dogumYili: props.dogumYili,
+      }),
+    })
+    .then((res) => res.text())
+    .then((res) => convert.xml2json(res))
+    .then((res) => JSON.parse(res))
+    .then(
+      (res) => res.elements[0].elements[0].elements[0].elements[0].elements[0]
+    )
+    .then((res) => res.text)
+  return {
+    status: true,
+    data: {
+      isValid: response === 'true',
+    },
   }
 }
 export default check
